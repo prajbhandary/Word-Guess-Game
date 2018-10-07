@@ -2,14 +2,14 @@
 
 
 var words = ["AFGHANISTAN","ARMENIA","AZERBAIJAN","BAHRAIN","BANGLADESH","BHUTAN","BRUNEI","CAMBODIA","CHINA","CYPRUS","GEORGIA","INDIA","INDONESIA","IRAN","IRAQ","ISRAEL","JAPAN","JORDAN","KAZAKHSTAN","KUWAIT","KYRGYZSTAN","LAOS","LEBANON","MALAYSIA","MALDIVES","MONGOLIA","MYANMAR","NEPAL","NORTHKOREA","OMAN","PAKISTAN","PALESTINE","PHILIPPINES","QATAR","RUSSIA","SAUDIARABIA","SINGAPORE","SOUTHKOREA","SRILANKA","SYRIA","TAIWAN","TAJIKISTAN","THAILAND","TIMORLESTE","TURKEY","TURKMENISTAN","UAE","UZBEKISTAN","VIETNAM","YEMEN"]; //arrays of words
-var randomWords = words[Math.floor(Math.random() * words.length)];// random words
-console.log(randomWords); //random word selection
+var randomWords =[];
 var guessingWord =[]; //to be used for display "-" or the correct word
 var maxTries = 10; //count 
 var wins = 0;
 var chances =10;
 var guessedletters =[]; // 
 var gameOver = false;
+var loss =0;
 
 
 
@@ -18,7 +18,10 @@ functions
  */
 
 function prepareGame(){
-
+    guessedletters= [];
+    chances = 10;
+     randomWords = words[Math.floor(Math.random() * words.length)];// random words
+    console.log(randomWords); //random word selection
     guessingWord= [];
     for (var i = 0; i < randomWords.length; i++) {
         guessingWord.push("-");
@@ -32,6 +35,7 @@ prepareGame();
 function show(){
     
     document.getElementById("totalWins").innerHTML = wins; // total wins
+    document.getElementById("totalLoss").innerHTML = loss; // total wins
 
     document.getElementById("")
 
@@ -69,7 +73,7 @@ function guess(letter){
         main(letter); // to main function to compare with the guess array
         show(); // call the show function to display
         win();
-       loss();
+        lose();
     }
 }
 
@@ -98,15 +102,19 @@ function win(){
         if (guessingWord.indexOf("-") === -1){
             wins++;
             gameOver = true;
+            prepareGame();
         }
     }
 
 }
 
-function loss(){
+function lose(){
+    
     if (chances == 0){
         console.log("lost");
+        loss++;
         gameOver = true;
+        prepareGame();
     }
     
 }
