@@ -1,0 +1,19 @@
+h1{
+    text-align: center;
+}
+
+.col-md-8{
+    background: grey;
+    text-align: center;
+
+}
+
+body{
+
+    background: ghostwhite;
+}
+
+
+.jumbotron-fluid{
+    margin-bottom: 0;
+}
