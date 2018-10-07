@@ -1,7 +1,7 @@
 //variables needs (add as you go) 
 
 
-var words = ["CAT", "WOLF", "MONKEY"]; //arrays of words
+var words = ["AFGHANISTAN","ARMENIA","AZERBAIJAN","BAHRAIN","BANGLADESH","BHUTAN","BRUNEI","CAMBODIA","CHINA","CYPRUS","GEORGIA","INDIA","INDONESIA","IRAN","IRAQ","ISRAEL","JAPAN","JORDAN","KAZAKHSTAN","KUWAIT","KYRGYZSTAN","LAOS","LEBANON","MALAYSIA","MALDIVES","MONGOLIA","MYANMAR","NEPAL","NORTHKOREA","OMAN","PAKISTAN","PALESTINE","PHILIPPINES","QATAR","RUSSIA","SAUDIARABIA","SINGAPORE","SOUTHKOREA","SRILANKA","SYRIA","TAIWAN","TAJIKISTAN","THAILAND","TIMORLESTE","TURKEY","TURKMENISTAN","UAE","UZBEKISTAN","VIETNAM","YEMEN"]; //arrays of words
 var randomWords = words[Math.floor(Math.random() * words.length)];// random words
 console.log(randomWords); //random word selection
 var guessingWord =[]; //to be used for display "-" or the correct word
